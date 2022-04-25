@@ -1,0 +1,29 @@
+Si consideri un file contenente una sequenza di quotazioni di borsa con il
+seguente formato:
+
+nome_societ`a#val1#val2#val3...#valn$
+
+Su ciascuna riga del file `e presente il nome della societ`a (massimo 20 caratteri senza spazi) a cui si
+riferiscono le quotazioni e i valori delle azioni (preceduto dal carattere #, senza spazi) in diversi istanti
+della giornata. Il numero di valori rilevati pu`o variare da societ`a a societ`a, ma `e compreso tra 1 e 100.
+In tutti i casi la lista `e terminata dal carattere $.
+Un esempio di file siffatto `e il seguente:
+
+Axis#12.5#11.8#13.7#11.9#10.7$
+BiRom#5.2#4.8#4.9#5.0$
+Comeco#24.3#24.4#24.6#24.3#24.2#24.5#24.2#24.3#24.3$
+
+Si scriva una funzione C che prenda come parametri il nome di un file di input nel formato precedente
+ed il nome di un file di output, e scriva in quest’ultimo i dati relativi alle quotazioni minima, mediana e
+massima registrate per ciascuna societ`a.
+La mediana di una lista di valori `e quel valore che ha un numero uguale di valori pi`u grandi e pi`u
+piccoli. Nel caso di numero di valori pari, la mediana `e quel valore che ha un numero di valori pi`u grandi
+maggiore di uno rispetto a quelli pi`u piccoli.
+Nel caso del file precedente, la funzione deve produrre il seguente file:
+
+Axis 10.7 11.8 13.7
+BiRom 4.8 4.9 5.2
+Comeco 24.2 24.3 24.6
+Si consideri gi`a disponibile la funzione
+void Ordina(float v[], int n);
+che ordina un vettore di n elementi.
